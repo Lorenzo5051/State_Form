@@ -4,13 +4,32 @@ import Table from  './Table';
 
 class App extends React.Component{
     render(){
-    return(
-       <div className='container'>
-           <Table/>
-       </div>
-    );
-  }
- }
+        const characters = [
+            {
+                name: 'John',
+                job: 'Smithery'
+            },
+            {
+                name: 'Clyde',
+                job: 'Carpenter'
+            },
+            {
+                name: 'Wanda',
+                job: 'Engineer'
+            },
+            {
+                name: 'Claudia',
+                job: 'Manager'
+            }
+        ];
+
+        return(
+         <div className='container'>
+               <Table characters ={characters} />
+        </div>
+        );
+    }
+}
   
 
 export default App;
