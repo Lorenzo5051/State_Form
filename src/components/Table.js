@@ -2,7 +2,7 @@ import React from 'react';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 
-class Table extends React.Component {
+class Table_Test extends React.Component {
 render() {
     const {characters} = this.props;
 
@@ -20,6 +20,18 @@ render() {
         </div>
     );
 }
+}
+
+
+const Table = props => {
+    const {characters, removeCharacter} = props;
+
+    return (
+        <table>
+            <TableHeader />
+            <TableBody characters = {characters} removeCharacter = {removeCharacter} />
+        </table>
+    );
 }
 
 

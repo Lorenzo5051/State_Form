@@ -3,8 +3,9 @@ import Table from  './Table';
 
 
 class App extends React.Component{
+
     state = {
-        characters: [
+        characters:[
             {
                 name: 'John',
                 job: 'Smithery'
@@ -20,18 +21,29 @@ class App extends React.Component{
             {
                 name: 'Claudia',
                 job: 'Manager'
-            }
-        ]
+            },
+        ],
     };
 
     removeCharacter = index => {
-        const {characters} = this.state;
+        const { characters } = this.state;
         this.setState({
-            characters: characters.filter((char,i) => {
-                return i !== index;
-            }),
-        });
+            characters: characters.filter((char,i)=> {
+                return i !== index
+            })
+        })
     };
+
+    render() {
+        const {characters} = this.state;
+
+        return (
+            <div className="container">
+                <Table characters={characters} removeCharacter ={this.removeCharacter}/>
+            </div>
+        )
+    }
+
 }
   
 
